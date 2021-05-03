@@ -10,7 +10,7 @@
 	<parent>
 		<groupId>org.tynamo.security</groupId>
 		<artifactId>tynamo-federatedaccounts-parent</artifactId>
-		<version>0.7.1-SNAPSHOT</version>
+		<version>5.7.2-0.7.1-SNAPSHOT</version>
 	</parent>
 
 	<dependencies>

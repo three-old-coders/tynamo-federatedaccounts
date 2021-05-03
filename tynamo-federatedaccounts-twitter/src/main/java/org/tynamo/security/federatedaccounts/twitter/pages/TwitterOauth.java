@@ -1,21 +1,20 @@
 package org.tynamo.security.federatedaccounts.twitter.pages;
 
-import java.net.URL;
-
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.tapestry5.EventContext;
 import org.apache.tapestry5.alerts.AlertManager;
+import org.apache.tapestry5.http.services.Request;
 import org.apache.tapestry5.ioc.annotations.Inject;
-import org.apache.tapestry5.services.Request;
 import org.slf4j.Logger;
 import org.tynamo.security.federatedaccounts.base.AbstractOauthPage;
 import org.tynamo.security.federatedaccounts.twitter.TwitterAccessToken;
-
 import twitter4j.Twitter;
 import twitter4j.TwitterFactory;
 import twitter4j.auth.AccessToken;
 import twitter4j.auth.RequestToken;
+
+import java.net.URL;
 
 public class TwitterOauth extends AbstractOauthPage {
 	@Inject

@@ -1,13 +1,11 @@
 package org.tynamo.security.federatedaccounts.testapp.services;
 
-import java.sql.SQLException;
-
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.realm.Realm;
 import org.apache.tapestry5.SymbolConstants;
-import org.apache.tapestry5.ioc.Configuration;
-import org.apache.tapestry5.ioc.MappedConfiguration;
-import org.apache.tapestry5.ioc.OrderedConfiguration;
+import org.apache.tapestry5.commons.Configuration;
+import org.apache.tapestry5.commons.MappedConfiguration;
+import org.apache.tapestry5.commons.OrderedConfiguration;
 import org.apache.tapestry5.ioc.ServiceBinder;
 import org.apache.tapestry5.ioc.annotations.Contribute;
 import org.apache.tapestry5.ioc.annotations.InjectService;
@@ -29,6 +27,8 @@ import org.tynamo.security.services.SecurityFilterChainFactory;
 import org.tynamo.security.services.SecurityModule;
 import org.tynamo.security.services.impl.SecurityFilterChain;
 import org.tynamo.seedentity.jpa.services.SeedEntityModule;
+
+import java.sql.SQLException;
 
 // excplicitly claiming these as submodules just for development and testing
 @SubModule(value = { SecurityModule.class, SeedEntityModule.class, FederatedAccountsModule.class, FacebookFederatedAccountsModule.class })
@@ -69,7 +69,7 @@ public class AppModule {
 	}
 
 	public static void contributeSecurityConfiguration(OrderedConfiguration<SecurityFilterChain> configuration,
-			SecurityFilterChainFactory factory) {
+													   SecurityFilterChainFactory factory) {
 		configuration.add("assets", factory.createChain("/assets/**").add(factory.anon()).build());
 		configuration.add("loginform-anon",
 			factory.createChain("/login.loginform.tynamologinform").add(factory.anon()).build());
@@ -128,6 +128,4 @@ public class AppModule {
 		throws SQLException {
 			org.h2.tools.Server.createWebServer(new String[] { "-web", "-webAllowOthers", "-webPort", "8082" }).start();
 	}
-
-
 }

@@ -5,11 +5,11 @@ import org.apache.tapestry5.ComponentResources;
 import org.apache.tapestry5.annotations.Import;
 import org.apache.tapestry5.annotations.Parameter;
 import org.apache.tapestry5.annotations.Property;
+import org.apache.tapestry5.http.services.BaseURLSource;
+import org.apache.tapestry5.http.services.Request;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.ioc.annotations.Symbol;
-import org.apache.tapestry5.services.BaseURLSource;
 import org.apache.tapestry5.services.PageRenderLinkSource;
-import org.apache.tapestry5.services.Request;
 import org.tynamo.security.federatedaccounts.FederatedAccountSymbols;
 
 @Import(library = "OauthSignIn.js")

@@ -9,7 +9,7 @@
 	<parent>
 		<groupId>org.tynamo.security</groupId>
 		<artifactId>tynamo-federatedaccounts-parent</artifactId>
-		<version>0.7.1-SNAPSHOT</version>
+		<version>5.7.2-0.7.1-SNAPSHOT</version>
 	</parent>
 
 	<dependencies>
@@ -42,8 +42,7 @@
 		<dependency>
 			<groupId>org.tynamo</groupId>
 			<artifactId>tapestry-jpa-seedentity</artifactId>
-			<version>0.1.6</version>
-			<scope>test</scope>
+			<version>0.3.0</version>
 		</dependency>
 
 		<dependency>
@@ -102,25 +101,25 @@
 		<dependency>
 			<groupId>org.tynamo.security</groupId>
 			<artifactId>tynamo-federatedaccounts-facebook</artifactId>
-			<version>0.7.1-SNAPSHOT</version>
+			<version>5.7.2-0.7.1-SNAPSHOT</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.tynamo.security</groupId>
 			<artifactId>tynamo-federatedaccounts-twitter</artifactId>
-			<version>0.7.1-SNAPSHOT</version>
+			<version>5.7.2-0.7.1-SNAPSHOT</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.tynamo.security</groupId>
 			<artifactId>tynamo-federatedaccounts-pac4jbasedoauth</artifactId>
-			<version>0.7.1-SNAPSHOT</version>
+			<version>5.7.2-0.7.1-SNAPSHOT</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.tynamo.security</groupId>
 			<artifactId>tynamo-federatedaccounts-rollingtokens</artifactId>
-			<version>0.7.1-SNAPSHOT</version>
+			<version>5.7.2-0.7.1-SNAPSHOT</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>

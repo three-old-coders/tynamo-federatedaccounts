@@ -1,14 +1,15 @@
 package org.tynamo.security.federatedaccounts.services;
 
-import java.util.Map;
-
 import org.apache.tapestry5.ioc.annotations.Symbol;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
+import org.hibernate.resource.transaction.spi.TransactionStatus;
 import org.slf4j.Logger;
 import org.tynamo.security.federatedaccounts.FederatedAccount;
 import org.tynamo.security.federatedaccounts.FederatedAccountSymbols;
+
+import java.util.Map;
 
 public class DefaultHibernateFederatedAccountServiceImpl extends AbstractFederatedAccountService implements
 	FederatedAccountService {
@@ -28,7 +29,7 @@ public class DefaultHibernateFederatedAccountServiceImpl extends AbstractFederat
 
 	private Transaction beginTransaction() {
 		Transaction transaction = session.beginTransaction();
-		if (!transaction.isActive()) transaction.begin();
+		if (!transaction.getStatus().isOneOf(TransactionStatus.ACTIVE)) transaction.begin();
 		return transaction;
 	}
 

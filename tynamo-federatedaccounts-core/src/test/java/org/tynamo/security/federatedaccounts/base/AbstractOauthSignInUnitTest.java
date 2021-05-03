@@ -1,18 +1,18 @@
 package org.tynamo.security.federatedaccounts.base;
 
+import org.apache.tapestry5.ComponentResources;
+import org.apache.tapestry5.http.Link;
+import org.apache.tapestry5.http.services.BaseURLSource;
+import org.apache.tapestry5.http.services.Request;
+import org.apache.tapestry5.runtime.Component;
+import org.apache.tapestry5.services.PageRenderLinkSource;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 import static org.testng.AssertJUnit.assertEquals;
-
-import org.apache.tapestry5.ComponentResources;
-import org.apache.tapestry5.Link;
-import org.apache.tapestry5.runtime.Component;
-import org.apache.tapestry5.services.BaseURLSource;
-import org.apache.tapestry5.services.PageRenderLinkSource;
-import org.apache.tapestry5.services.Request;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
 
 public class AbstractOauthSignInUnitTest {
 	Link link = mock(Link.class);

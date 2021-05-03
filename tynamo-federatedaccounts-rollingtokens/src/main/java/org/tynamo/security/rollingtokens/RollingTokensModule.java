@@ -1,21 +1,5 @@
 package org.tynamo.security.rollingtokens;
 
-import java.math.BigInteger;
-import java.util.Collection;
-import java.util.Date;
-import java.util.List;
-import java.util.Random;
-
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -26,15 +10,11 @@ import org.apache.shiro.realm.Realm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.subject.SubjectContext;
 import org.apache.shiro.web.mgt.WebSecurityManager;
-import org.apache.tapestry5.ioc.Configuration;
-import org.apache.tapestry5.ioc.MappedConfiguration;
+import org.apache.tapestry5.commons.Configuration;
+import org.apache.tapestry5.commons.MappedConfiguration;
 import org.apache.tapestry5.ioc.MethodAdviceReceiver;
 import org.apache.tapestry5.ioc.ServiceBinder;
-import org.apache.tapestry5.ioc.annotations.Advise;
-import org.apache.tapestry5.ioc.annotations.Contribute;
-import org.apache.tapestry5.ioc.annotations.Inject;
-import org.apache.tapestry5.ioc.annotations.InjectService;
-import org.apache.tapestry5.ioc.annotations.Symbol;
+import org.apache.tapestry5.ioc.annotations.*;
 import org.apache.tapestry5.jpa.JpaEntityPackageManager;
 import org.apache.tapestry5.jpa.JpaTransactionAdvisor;
 import org.apache.tapestry5.services.Cookies;
@@ -46,6 +26,21 @@ import org.tynamo.security.rollingtokens.services.CommittingAuthenticationListen
 import org.tynamo.security.rollingtokens.services.RollingToken;
 import org.tynamo.security.rollingtokens.services.RollingTokenRealm;
 
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.math.BigInteger;
+import java.util.Collection;
+import java.util.Date;
+import java.util.List;
+import java.util.Random;
+
 public class RollingTokensModule {
 
 	public static void bind(ServiceBinder binder) {
@@ -54,8 +49,8 @@ public class RollingTokensModule {
 	}
 
 	public static void contributeWebSecurityManager(Configuration<Realm> configuration, Authenticator authenticator,
-		WebSecurityManager securityManager, CommittingAuthenticationListener rollingTokenAuthenticationListener,
-		@InjectService("RollingTokenRealm") AuthenticatingRealm rollingTokenRealm) {
+													WebSecurityManager securityManager, CommittingAuthenticationListener rollingTokenAuthenticationListener,
+													@InjectService("RollingTokenRealm") AuthenticatingRealm rollingTokenRealm) {
 		configuration.add(rollingTokenRealm);
 
 		// doesn't necessarily belong here, but we can just as well set up the listener here

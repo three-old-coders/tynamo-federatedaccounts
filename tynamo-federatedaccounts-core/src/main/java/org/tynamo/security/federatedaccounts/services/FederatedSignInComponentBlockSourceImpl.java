@@ -4,9 +4,9 @@ import java.util.Collection;
 import java.util.Map;
 
 import org.apache.tapestry5.Block;
+import org.apache.tapestry5.commons.util.CollectionFactory;
 import org.apache.tapestry5.internal.services.RequestPageCache;
 import org.apache.tapestry5.internal.structure.Page;
-import org.apache.tapestry5.ioc.internal.util.CollectionFactory;
 import org.slf4j.Logger;
 
 public class FederatedSignInComponentBlockSourceImpl implements FederatedSignInComponentBlockSource {
