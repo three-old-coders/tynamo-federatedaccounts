@@ -6,7 +6,7 @@
 	<name>Federated Accounts for Tapestry Security</name>
 	<description>Tynamo Federated Accounts (Facebook etc.) package for Shiro-based Tapestry Security</description>
 	<packaging>pom</packaging>
-	<version>5.7.2-0.7.1-SNAPSHOT</version>
+	<version>0.7.1-T5.8.3</version>
 
 	<parent>
 		<groupId>org.tynamo</groupId>
@@ -15,7 +15,10 @@
 	</parent>
 
 	<properties>
-		<tapestry-release-version>5.7.2</tapestry-release-version>
+		<tapestry-release-version>5.8.3</tapestry-release-version>
+
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
 	</properties>
 
 	<scm>
@@ -27,14 +30,14 @@
 
 	<modules>
 		<module>tynamo-federatedaccounts-core</module>
-		<module>tynamo-federatedaccounts-facebook</module>
-		<module>tynamo-federatedaccounts-pac4jbasedoauth</module>
+		<!-- not used <module>tynamo-federatedaccounts-facebook</module> -->
+		<!-- not used <module>tynamo-federatedaccounts-pac4jbasedoauth</module> -->
 		<!-- disable openid module for now since they are not fully tested
 		<module>tynamo-federatedaccounts-openid</module>
 		-->
-		<module>tynamo-federatedaccounts-rollingtokens</module>
-		<module>tynamo-federatedaccounts-twitter</module>
-		<module>tynamo-federatedaccounts-test</module>
+		<!-- not used <module>tynamo-federatedaccounts-rollingtokens</module> -->
+		<!-- not used <module>tynamo-federatedaccounts-twitter</module> -->
+		<!-- not used <module>tynamo-federatedaccounts-test</module> -->
 	</modules>
 
 	<dependencyManagement>
@@ -42,7 +45,7 @@
 			<dependency>
 				<groupId>org.tynamo.security</groupId>
 				<artifactId>tynamo-federatedaccounts-core</artifactId>
-				<version>5.7.2-0.7.1-SNAPSHOT</version>
+				<version>0.7.1-T5.8.3</version>
 			</dependency>
 			<dependency>
 				<groupId>com.h2database</groupId>
@@ -67,7 +70,7 @@
 			<dependency>
 				<groupId>org.tynamo</groupId>
 				<artifactId>tapestry-security</artifactId>
-				<version>0.9.0</version>
+				<version>0.9.1-T5.8.3</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

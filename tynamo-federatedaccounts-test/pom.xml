@@ -9,7 +9,7 @@
 	<parent>
 		<groupId>org.tynamo.security</groupId>
 		<artifactId>tynamo-federatedaccounts-parent</artifactId>
-		<version>5.7.2-0.7.1-SNAPSHOT</version>
+		<version>0.7.1-T5.8.3</version>
 	</parent>
 
 	<dependencies>
@@ -101,25 +101,25 @@
 		<dependency>
 			<groupId>org.tynamo.security</groupId>
 			<artifactId>tynamo-federatedaccounts-facebook</artifactId>
-			<version>5.7.2-0.7.1-SNAPSHOT</version>
+			<version>0.7.1-T5.8.3</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.tynamo.security</groupId>
 			<artifactId>tynamo-federatedaccounts-twitter</artifactId>
-			<version>5.7.2-0.7.1-SNAPSHOT</version>
+			<version>0.7.1-T5.8.3</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.tynamo.security</groupId>
 			<artifactId>tynamo-federatedaccounts-pac4jbasedoauth</artifactId>
-			<version>5.7.2-0.7.1-SNAPSHOT</version>
+			<version>0.7.1-T5.8.3</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.tynamo.security</groupId>
 			<artifactId>tynamo-federatedaccounts-rollingtokens</artifactId>
-			<version>5.7.2-0.7.1-SNAPSHOT</version>
+			<version>0.7.1-T5.8.3</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
