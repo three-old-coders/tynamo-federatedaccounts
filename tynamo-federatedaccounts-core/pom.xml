@@ -7,7 +7,7 @@
 	<packaging>jar</packaging>
 
 	<parent>
-		<groupId>org.tynamo.security</groupId>
+		<groupId>io.github.three-old-coders.tapestry5.tynamo.security</groupId>
 		<artifactId>tynamo-federatedaccounts-parent</artifactId>
 		<version>0.7.1-T5.8.3</version>
 	</parent>
@@ -33,7 +33,7 @@
 			<artifactId>tynamo-common</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.tynamo</groupId>
+			<groupId>io.github.three-old-coders.tapestry5.tynamo</groupId>
 			<artifactId>tapestry-security</artifactId>
 		</dependency>
 		<dependency>

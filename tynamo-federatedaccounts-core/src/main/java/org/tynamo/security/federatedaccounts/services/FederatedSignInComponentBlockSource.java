@@ -8,7 +8,7 @@ public interface FederatedSignInComponentBlockSource {
 	/**
 	 * Returns a block which can be used to render an editor for the given data type, in the form of a field label and input field.
 	 * 
-	 * @param datatype
+	 * @param key
 	 *          logical name for the type of data to be displayed
 	 * @return the Block
 	 * @throws RuntimeException

@@ -21,6 +21,7 @@ public class FederatedSignInComponentContribution {
 
 	/**
 	 * The type of data for which the indicated block will provide an editor or displayer for.
+	 * @return the Key
 	 */
 	public final String getKey() {
 		return key;
@@ -28,6 +29,7 @@ public class FederatedSignInComponentContribution {
 
 	/**
 	 * The logical name of the page containing the block.
+	 * @return the PageName
 	 */
 	public final String getPageName() {
 		return pageName;

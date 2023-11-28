@@ -1,12 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.tynamo.security</groupId>
+	<!-- groupId>org.tynamo.security</groupId -->
+	<groupId>io.github.three-old-coders.tapestry5.tynamo.security</groupId>
 	<artifactId>tynamo-federatedaccounts-parent</artifactId>
 	<name>Federated Accounts for Tapestry Security</name>
 	<description>Tynamo Federated Accounts (Facebook etc.) package for Shiro-based Tapestry Security</description>
 	<packaging>pom</packaging>
 	<version>0.7.1-T5.8.3</version>
+	<url>https://github.com/three-old-coders/tynamo-federatedaccounts.git</url>
 
 	<parent>
 		<groupId>org.tynamo</groupId>
@@ -16,15 +18,23 @@
 
 	<properties>
 		<tapestry-release-version>5.8.3</tapestry-release-version>
-
 		<maven.compiler.source>11</maven.compiler.source>
 		<maven.compiler.target>11</maven.compiler.target>
 	</properties>
 
+	<licenses>
+		<license>
+			<name>Apache Software License 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+
 	<scm>
-		<connection>scm:git:git@github.com:tynamo/tynamo-federatedaccounts.git</connection>
-		<developerConnection>scm:git:git@github.com:tynamo/tynamo-federatedaccounts.git</developerConnection>
-		<url>https://github.com/tynamo/tynamo-federatedaccounts</url>
+		<connection>scm:git:git@github.com/three-old-coders/tynamo-federatedaccounts.git</connection>
+		<developerConnection>scm:git:git@github.com/three-old-coders/tynamo-federatedaccounts.git</developerConnection>
+		<url>https://github.com/three-old-coders/tynamo-federatedaccounts</url>
 		<tag>HEAD</tag>
 	</scm>
 
@@ -68,13 +78,13 @@
 			</dependency>
 
 			<dependency>
-				<groupId>org.tynamo</groupId>
+				<groupId>io.github.three-old-coders.tapestry5.tynamo</groupId>
 				<artifactId>tapestry-security</artifactId>
 				<version>0.9.1-T5.8.3</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-
+<!--
 	<build>
 		<plugins>
 			<plugin>
@@ -85,4 +95,78 @@
 			</plugin>
 		</plugins>
 	</build>
+-->
+
+	<profiles>
+		<profile>
+			<id>mvnCentral</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-source-plugin</artifactId>
+						<version>3.2.1</version>
+						<executions>
+							<execution>
+								<id>attach-sources</id>
+								<!-- <phase>verify</phase> -->
+								<goals>
+									<goal>jar-no-fork</goal>
+									<!-- <goal>jar</goal> -->
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<version>3.2.0</version>
+						<configuration>
+							<!-- <source>11</source> -->
+							<detectJavaApiLink>false</detectJavaApiLink>
+						</configuration>
+						<executions>
+							<execution>
+								<id>attach-javadocs</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>3.1.0</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+								<configuration>
+									<keyname>${gpg.keyname}</keyname>
+									<passphraseServerId>${gpg.keyname}</passphraseServerId>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.sonatype.plugins</groupId>
+						<artifactId>nexus-staging-maven-plugin</artifactId>
+						<version>1.6.8</version>
+						<extensions>true</extensions>
+						<configuration>
+							<serverId>ossrh</serverId>
+							<nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
+							<autoReleaseAfterClose>false</autoReleaseAfterClose>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+	</profiles>
+
 </project>
